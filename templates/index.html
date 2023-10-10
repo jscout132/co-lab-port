@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-3">
+            <img src="../static/img/J.png" alt="Jacob Nelson logo image" class="thumbnail">
+        </div>
+        <div class="col-6">
+            <h4 class="header-font text-center" style="font-size: 3.5rem;">Hi, I'm Jacob.<br/> I like birds. </h4>
+        </div>
+        <div class="col-3">
+            <img src="../static/img/IMG_6090.jpg" alt="Jacob sitting in a chair wearing a blue shirt in front of green plants with purple flowers" class="thumbnail" style="border-radius: 50%;">
+        </div>
+    </div>
+    <div class="row">
+        <div class="pt-3">
+            <p class="body-font text-center" style="font-size: 1.5rem;">
+                They're everywhere! Once you start learning what to look and listen for, 
+                walking through the woods becomes a completely different experience.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container mt-3">
+
+    <div class="">
+        <h4 class="header-font">I'm originally from Northwest Ohio</h4>
+
+        <div class="row">
+            <div class="col-4">
+                <p class="body-font">I moved to Durham not long before the pandemic and had a hard time 
+                    adjusting. One of the activites that got me through, like many people, was taking long
+                    walks in the woods. During that time, I started to get to know my new home through nature. It 
+                    made such a difference. I more learned about the flora and fauna of the area the more at home I felt.
+                </p>
+                <p class="body-font">
+                    Prior to starting the Coding Temple program, I was a fundraiser and grant writer in
+                    the non-profit space. I worked a number of years in sexual and domestic violence prevention work, then 
+                    a couple years in voting rights and justice system reform. I am passionate about building a better and 
+                    safer world with increased access for those who have historically been left out.
+                </p>
+            </div>
+            <div class="col-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3218462.028655086!2d-83.70215255543374!3d38.02309582048222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x883c0b2a25067f69%3A0x262f18a392dd49a3!2sBowling%20Green%2C%20OH!3m2!1d41.3747744!2d-83.6513229!4m5!1s0x89ace471120f66f1%3A0xe17ada898a46f27e!2sDurham%2C%20NC!3m2!1d35.9940329!2d-78.898619!5e0!3m2!1sen!2sus!4v1696530891228!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="mt-3">
+        <h4 class="header-font">I've spent the past few years learning more about North Carolina. </h4>
+        <p class="body-font">Specifically, the birds. According to <a href="https://www.ncwildlife.org/learning/species#8682111-birds">NC Wildlife.org,</a> 
+            North Carolina is home to more than 475 wild bird species - thanks in part to the state's 
+            diverse habitats that range from the high mountain peaks to coastal marshes.</p>
+    </div>
+</div>
+<div class="bg-gradient my-3">
+    <div class="container">
+        <h4 class="header-font">The Cornell Lab of Ornithology is an excellent resource to learn more about birds.</h4>
+        <p class="body-font" style="font-size: 1rem;">
+            Their eBird API has so much information in it. Because users are able to add spottings, the data is super dynamic and it's constantly being
+            updated as information is being added. Here are the top 5 birds that have been spotted North Carolina today based on how many users have added spottings:
+        </p>
+        <div class="row bg-secondary-subtle">
+            {% for i in top_five_birds %}
+            <div class="col-4 bird-box">
+                <p class="body-font" style="font-size: 1rem;">
+                    <strong>{{ i['comName'] }}</strong>
+                </p>
+                <p class="body-font" style="font-size: .9rem;">
+                    Scientific Name: {{ i['sciName']}}
+                </p>
+                <p class="body-font" style="font-size: .9rem;">
+                    Number Recorded: {{ i['howMany'] }}
+                </p>
+                <p class="body-font" style="font-size: .9rem;">
+                    Location: {{ i['locName'] }}
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container">
+        <h4 class="header-font">People are recording this information every day</h4>
+        <p class="body-font">Here are some of the folks who have been posting:</p>
+        <div class="row bg-secondary-subtle">
+            {% for i in top_three_contributors %}
+                <div class="col-4 bird-box">
+                    <p class="body-font">{{ i['userDisplayName'] }}</p>
+                    <p class="body-font">Birds Recorded: {{i['numSpecies']}}</p>
+                </div>
+            {% endfor %}
+        <p class="body-font">
+            Because of these dedicated users and many more, we can keep learning more about some of the 
+            different habits birds have. Thank you!
+        </p>
+        </div>
+
+    </div>
+    <div class="container">
+        <p class="body-font">
+            I'm planning to build out a project with this API allowing users to search for hot spots close to 
+            their location. 
+        </p>
+    </div>
+</div>
+
+<div>
+    <div class="container mb-3">
+        <h4 class="header-font">Earlier this year, I shifted my career</h4>
+        <p class="body-font">
+            My undergrad degree was in website design and I realized I missed it a lot. I felt ready to shift back
+            and deepen my understanding and knowledge of programming and coding. After starting the Coding Temple
+            Software Engineering program, I knew I had made the right choice. I missed the way my brain chews on problems. 
+            I'm really looking to continue that learning with a team. 
+        </p>
+        <p class="body-font">
+            I'm still working on developing my portfolio. While in the Coding Temple program, I had a lot of fun playing with 
+            Python and Flask. Together, they're an interesting way to gather, organize, and present data. 
+        </p>
+        <div class="row">
+            <div class="col-4">
+                <img src="../static/img/your_weather_logo.png" alt="" class="img-fluid">
+                <p class="body-font">
+                    Your Weather was my capstone project. Using the OpenWeather API, I built a site 
+                    allowing users to create a profile, save locations, and view the weather in those locations.
+                </p>
+                <a href="https://your-weather-4c7f9393e4d9.herokuapp.com/">
+                    <button class="button">Visit Your Weather &#x2192;</button>
+                </a>
+            </div>
+            <div class="col-4">
+                <img src="../static/img/poke-logo.png" alt="" class="img-fluid">
+                <p class="body-font">
+                    PokeMem is a silly memory game. This is definitely a work in progress and there 
+                    are a number of features I want to add. It uses the Pokemon API to pull pairs of 
+                    items and some fun JavaScript to flip the cards. 
+                </p>
+                <a href="https://jewel-yummy-keyboard.glitch.me/">
+                    <button class="button">Visit PokeMem &#x2192;</button>
+                </a>
+            </div>
+            <div class="col-4">
+                <h4 class="header-font text-center">State Stats</h4>
+                <p class="body-font">
+                    State Stats is another work in progress. I used Python webscraping to build a large dictionary of information
+                    each state. My eventual goal is to create an interactive map allowing users to hover over each state and click to 
+                    learn more
+                </p>
+                <a href="#">
+                    <button class="button">Visit State Stats &#x2192;</button>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

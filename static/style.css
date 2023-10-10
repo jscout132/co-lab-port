@@ -1,0 +1,38 @@
+
+.bg-gradient {
+    background-image: linear-gradient(180deg, white, #c5d1cc);
+}
+
+.header-font {
+    font-family: Lora,sans-serif;
+    line-height: 1.4;
+}
+
+.body-font {
+    font-family: 'League Spartan', sans-serif;    
+}
+
+.thumbnail {
+    width: 100%;
+}
+
+.bird-box{
+    padding-left: 7.5%;
+    padding-top: 2%;
+    border: black, 1px solid;
+}
+
+.button {
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border: none;
+}
+
+.button:hover {
+    background-color: #666666;
+}
